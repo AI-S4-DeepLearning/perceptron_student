@@ -2,7 +2,7 @@
 
 
 (c) 2025 Hogeschool Utrecht  
-Auteurs: Tijmen Muller
+Auteur: Tijmen Muller (tijmen.muller@hu.nl)
 
 - Studentnummer:
 - Naam:
@@ -56,12 +56,12 @@ Een _layered feed-forward network_ van perceptrons bestaat uit één of meer lag
 
 Zoals je inmiddels weet, is een perceptron een *linear classifier*, het kan dus elk lineair classificatieprobleem oplossen. Om tot een oplossing te komen, kun je gebruik maken van de [*perceptron learning rule*](plr.md). Deze werkt als volgt: gegeven target $d$, input $\vec{x}$, weights $\vec{w}$ en bias $b$:
 
-- output $y = f(w \cdot \vec{x})$ met activatiefunctie $f$ en met $y \in \{0, 1\}$
+- output $y = g \left( w \cdot \vec{x} \right)$ met activatiefunctie $g$ en met $y \in  \{ 0, 1 \}$
 - error $e = d - y$
-- $\Delta \vec{w} = \eta \cdot e \cdot \vec{x}$ met $\eta$ een constante *learning rate* (kies bijvoorbeeld $\eta = 0.1$)
-- $\Delta b = \eta \cdot e$
-- $\vec{w}' = \vec{w} + \Delta \vec{w}$
-- $b' = b + \Delta b$
+- verandering $\Delta \vec{w} = \eta \cdot e \cdot \vec{x}$ met $\eta$ een constante *learning rate* (kies bijvoorbeeld $\eta = 0.1$)
+- verandering $\Delta b = \eta \cdot e$
+- nieuwe $\vec{w}' = \vec{w} + \Delta \vec{w}$
+- nieuwe $b' = b + \Delta b$
 
 Ga zelf na dat bovenstaande overeenkomt met [deze formule](https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html#the-perceptron-learning-rule):
 
@@ -97,21 +97,21 @@ Herschrijf je implementatie van `PerceptronNetwork` naar een variant die gebruik
 
 Elke rij in deze matrix is nu een perceptron in die laag. Elke kolom vertegenwoordigt een verbinding met een perceptron uit de vorige laag: in de eerste kolom de _bias_, in de tweede kolom de _weight_ met de eerste perceptron uit de vorige laag, in de derde kolom de tweede perceptron uit de vorige laag, enzovoorts. Het perceptron netwerk voor de XOR kan er dan bijvoorbeeld zo uit zien:
 
-* Hidden layer: 
-$\begin{bmatrix}
+* Hidden layer:
+
+$$\begin{bmatrix}
     -1  &    1  &   1  \\
      1  &   -1  &  -1  \\
-\end{bmatrix}$
+\end{bmatrix}$$
 
-* Output layer: 
-$
-\begin{bmatrix}
+* Output layer:
+
+$$\begin{bmatrix}
     -2  &    1  &   1  \\
-\end{bmatrix}
-$
+\end{bmatrix}$$
 
 De klassen `Perceptron` en `PerceptronLayer` verdwijnen nu dus uit de implementatie, want die informatie zit nu opgeslagen in matrices. 
 
-8. Herschrijf de methoden voor het initialiseren en activeren van een perceptron netwerk, zodat ze op een (efficiënte) manier gebruik maken van Numpy arrays.
+9. Herschrijf de methoden voor het initialiseren en activeren van een perceptron netwerk, zodat ze op een (efficiënte) manier gebruik maken van Numpy arrays.
 
-9. Test je gevectoriseerde perceptron netwerk met eerdergenoemde logische poorten: de AND (2 inputs, 1 laag), de NOR (3 inputs, 1 laag), de XOR (2 inputs, 2 lagen) en de half adder (2 inputs, 2 lagen)).
+10. Test je gevectoriseerde perceptron netwerk met eerdergenoemde logische poorten: de AND (2 inputs, 1 laag), de NOR (3 inputs, 1 laag), de XOR (2 inputs, 2 lagen) en de half adder (2 inputs, 2 lagen)).

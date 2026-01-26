@@ -2,7 +2,7 @@
 
 
 (c) 2025 Hogeschool Utrecht  
-Auteurs: Tijmen Muller
+Auteur: Tijmen Muller (tijmen.muller@hu.nl)
 
 ## Inleiding
 
