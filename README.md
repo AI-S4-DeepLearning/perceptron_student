@@ -1,7 +1,7 @@
 # Perceptron netwerk
 
 
-(c) 2025 Hogeschool Utrecht  
+(c) 2026 Hogeschool Utrecht  
 Auteur: Tijmen Muller (tijmen.muller@hu.nl)
 
 - Studentnummer:
